@@ -14,12 +14,13 @@ import com.google.firebase.ktx.Firebase
 
 class SingUp : AppCompatActivity() {
 private lateinit var auth: FirebaseAuth
-   /* public override fun onStart() {
+   public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
-        updateUI(currentUser)
-    }*/
+       if(currentUser != null){
+        updateUI()
+    }}
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -43,20 +44,21 @@ private lateinit var auth: FirebaseAuth
         }
 
     }
-/*fun updateUI(user: FirebaseUser?){
-    var i = Intent(this, SingUp::class.java)
+fun updateUI(){
+    var i = Intent(this, MainActivity::class.java)
     startActivity(i)
-}*/
+}
     private fun createNewAccount(email: String, password: String) {
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(baseContext, "Authentication Success", Toast.LENGTH_SHORT).show()
-                   /* val user = auth.currentUser
-                    updateUI(user)*/
+                 //   val user = auth.currentUser
+                    updateUI()
                 }else if (email.equals(email)&&password.equals(password)){
                     Toast.makeText(baseContext, "Email is already exists", Toast.LENGTH_SHORT).show()
+                    updateUI()
             }else {
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
                 }
