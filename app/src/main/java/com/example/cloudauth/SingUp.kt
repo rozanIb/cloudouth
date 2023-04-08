@@ -58,7 +58,6 @@ fun updateUI(){
                     updateUI()
                 }else if (email.equals(email)&&password.equals(password)){
                     Toast.makeText(baseContext, "Email is already exists", Toast.LENGTH_SHORT).show()
-                    updateUI()
             }else {
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
                 }
