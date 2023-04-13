@@ -23,8 +23,8 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
-        receiverUid = "KeJ87E7124OC5qxcaM52HMkCZk92"
-        senderUid = "H5HjQD7SdachQ70q266FTFCOy2w1"
+        receiverUid = "H5HjQD7SdachQ70q266FTFCOy2w1"
+        senderUid = "KeJ87E7124OC5qxcaM52HMkCZk92 "
         messagesRecyclerView = findViewById(R.id.messages_recycler_view)
         messageEditText = findViewById(R.id.message_input)
         sendButton = findViewById(R.id.send_button)
@@ -38,7 +38,6 @@ class ChatActivity : AppCompatActivity() {
 
         sendButton.setOnClickListener {
             val messageText = messageEditText.text.toString().trim()
-            Log.e("ola",messageText.toString())
             if (messageText.isNotEmpty()) {
                 sendMessage(messageText)
                 messageEditText.setText("")
