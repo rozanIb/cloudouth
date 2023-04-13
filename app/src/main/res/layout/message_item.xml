@@ -12,7 +12,7 @@
         android:background="@drawable/message_background"
         android:padding="8dp"
         android:textColor="@android:color/white"
-        android:textSize="22sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/message_time"
